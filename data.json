@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "author": "Audrey Hepburn",
+    "text": "Nothing is impossible, the word itself says 'I'm possible'!"
+  },
+  {
+    "id": 2,
+    "author": "Walt Disney",
+    "text": "You may not realize it when it happens, but a kick in the teeth may be the best thing in the world for you"
+  },
+  {
+    "id": 3,
+    "author": "Unknown",
+    "text": "Even the greatest was once a beginner. Don’t be afraid to take that first step."
+  },
+  {
+    "id": 4,
+    "author": "Neale Donald Walsch",
+    "text": "You are afraid to die, and you’re afraid to live. What a way to exist."
+  },
+  {
+    "id": 5,
+    "author": "Stephen King",
+    "text": "Get busy living or get busy dying."
+  },
+  {
+    "id": 6,
+    "author": "Mark Twain",
+    "text": "Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do."
+  },
+  {
+    "id": 7,
+    "author": "Helen Keller",
+    "text": "When one door of happiness closes, another opens; but often we look so long at the closed door that we do not see the one which has been opened for us."
+  },
+  {
+    "id": 8,
+    "author": "John F. Kennedy",
+    "text": "Those who dare to fail miserably can achieve greatly."
+  },
+  {
+    "id": 9,
+    "author": "Marilyn Monroe",
+    "text": "“I’m selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can’t handle me at my worst, then you sure as hell don’t deserve me at my best.”"
+  }
+]
