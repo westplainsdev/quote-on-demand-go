@@ -1,1 +1,1 @@
-quote-on-demand-go
+# quotes on demand with Go
