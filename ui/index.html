@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Quotes on Demand</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="app" v-cloak>
+            <div class="shadow p-3 mb-5  rounded bg-dark text-light">
+                <span class="float-right">
+                    <router-link to="/" class="btn btn-outline-light" active-class="active" exact> Quote Listing</router-link>
+                    <router-link to="/manage" class="btn btn-outline-light" active-class="active"> Manage Quotes</router-link>
+                </span>
+                <h2 class="display-5">Quotes on Demand</h2>
+            </div>
+
+            <router-view></router-view>
+        </div>
+        <footer class="pull-left footer">
+            <p class="col-md-12"></p>
+            <hr class="divider" /> Copyright &copy; <span id="copyrightDate"></span>
+            <a href="https://github.com/westplainsdev">West Plains Develpment</a>
+            <p></p>
+        </footer>
+    </div>
+
+
+    <script>
+        (function () {
+            let target = document.getElementById("copyrightDate");
+            let date = new Date();
+            let yearDisplay = date.getFullYear();
+            target.innerHTML = yearDisplay;
+        })();
+    </script>
+    <!-- vue application dependencies -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="https://unpkg.com/http-vue-loader"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+    <!-- vue application scripts -->
+    <script src="./pages/home.vue.js"></script>
+    <script src="./pages/manage.vue.js"></script>
+
+    <script>
+        const baseUrl = 'http://localhost:5000';
+
+        Vue.use(VueRouter);
+
+        const routes = [{
+                path: '/',
+                component: home
+            },
+            {
+                path: '/manage/:id?',
+                component: manage
+            }
+        ];
+
+        let router = new VueRouter({
+            routes // short for `routes: routes`
+        });
+
+        router.beforeEach((to, from, next) => {
+            next()
+        });
+
+        var app = new Vue({
+            el: '#app',
+            watch: {},
+            mounted() {
+
+            },
+            data: {
+                msg: 'Hello',
+                email: ''
+            },
+            methods: {},
+            router
+        });
+    </script>
+</body>
+
+</html>
