@@ -2,7 +2,7 @@
 
 A fully featuerd VueJS application consuming and saving data to and from a third party API server.
 
-![alt text](example.PNG "Vue / API Demo")
+![alt text](example.png "Vue / API Demo")
 
 ## The Why
 
