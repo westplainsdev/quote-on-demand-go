@@ -8,7 +8,7 @@ A fully featuerd VueJS application consuming and saving data to and from a third
 
 This application was created with a couple goals in mind.
 
-1. Create a working Vue application wihout using a build system or module loader such as the
+1. Create a working Vue application without using a build system or module loader such as the
    Vue CLI or Webpack yet still keep the templates and javascript together.
 
 2. Incorporate as much as the standard Create, Read, Update and Delete functionality as possible
