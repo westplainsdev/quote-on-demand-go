@@ -16,7 +16,7 @@ type Quote struct {
 	Text   string `json:"text"`
 }
 
-// our collection for the filled Quotes
+// our `splice` collection for the filled Quotes
 var data []Quote
 
 // this is a private function to this file because it is not Capitalized
@@ -48,9 +48,12 @@ func GetQuote(w http.ResponseWriter, r *http.Request) {
 
 func GetQuoteById(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	params := mux.Vars(r) // Gets params using Mux
+	// Get our params from the URL using Mux
+	params := mux.Vars(r) 
+	// using this atoi method to parses the string into a integer 
 	requestId, _ := strconv.Atoi(params["id"])
 	// Loop through collection of quotes and find one with the id from the params
+	// the underscore is basically read as `for each item in collection`
 	for _, item := range data {
 		if item.Id == requestId {
 			json.NewEncoder(w).Encode(item)
@@ -75,8 +78,10 @@ func UpdateQuote(w http.ResponseWriter, r *http.Request) {
 	quote := Quote{}
 	_ = json.NewDecoder(r.Body).Decode(&quote)
 
+	// when you have the `index` defined, you have the actual index of the item from the splice
 	for index, item := range data {
 		if item.Id == quote.Id {
+			// this is very similar to a splice in JavaScript (same idea)
 			data = append(data[:index], data[index+1:]...)
 			data = append(data, quote)
 			json.NewEncoder(w).Encode(quote)
