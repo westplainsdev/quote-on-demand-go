@@ -32,7 +32,7 @@ func findHighestId() int {
 
 // load the JSON data file for usage.
 func LoadData() {
-	var content, err = ioutil.ReadFile("data.json")
+	var content, err = ioutil.ReadFile("./api/data.json")
 	if err != nil {
 		fmt.Println(err.Error())
 	}
@@ -49,8 +49,8 @@ func GetQuote(w http.ResponseWriter, r *http.Request) {
 func GetQuoteById(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	// Get our params from the URL using Mux
-	params := mux.Vars(r) 
-	// using this atoi method to parses the string into a integer 
+	params := mux.Vars(r)
+	// using this atoi method to parses the string into a integer
 	requestId, _ := strconv.Atoi(params["id"])
 	// Loop through collection of quotes and find one with the id from the params
 	// the underscore is basically read as `for each item in collection`
