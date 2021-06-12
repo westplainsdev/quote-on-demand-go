@@ -9,7 +9,7 @@ import (
 	"strconv"
 )
 
-// this is our data structure
+// Quote this is our data structure
 type Quote struct {
 	Id     int    `json:"id"`
 	Author string `json:"author"`
@@ -30,7 +30,7 @@ func findHighestId() int {
 	return maxId
 }
 
-// load the JSON data file for usage.
+// LoadData loads the JSON data file for usage.
 func LoadData() {
 	var content, err = ioutil.ReadFile("./api/data.json")
 	if err != nil {
@@ -40,7 +40,7 @@ func LoadData() {
 	json.Unmarshal(content, &data)
 }
 
-// the following are the actual CRUD endpoint functions
+// GetQuote the following are the actual CRUD endpoint functions
 func GetQuote(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(data)
@@ -51,6 +51,7 @@ func GetQuoteById(w http.ResponseWriter, r *http.Request) {
 	// Get our params from the URL using Mux
 	params := mux.Vars(r)
 	// using this atoi method to parses the string into a integer
+	// https://play.golang.org/p/r5dG6X5YuF
 	requestId, _ := strconv.Atoi(params["id"])
 	// Loop through collection of quotes and find one with the id from the params
 	// the underscore is basically read as `for each item in collection`
